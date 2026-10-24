@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Churi Ghor — Sign in</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(145deg,#fff6fa,#f9e5ef);font-family:system-ui,-apple-system,sans-serif;color:#38222d;display:grid;place-items:center;padding:18px}
+.card{width:min(100%,390px);background:#fff;border:1px solid #f3dce7;border-radius:25px;padding:26px 22px;box-shadow:0 18px 55px #9c42641a}
+.brand{text-align:center;margin-bottom:22px}.logo{margin:auto auto 10px;width:64px;height:64px;border-radius:21px;background:#9d285a;color:white;display:grid;place-items:center;font-size:28px;font-weight:800;box-shadow:0 8px 20px #9d285a30}.brand h1{font-size:25px;margin:0}.brand p{margin:6px 0 0;color:#8a7180;font-size:13px}
+.tabs{display:flex;background:#fff3f8;padding:4px;border-radius:12px;margin-bottom:19px}.tabs button{border:0;background:transparent;border-radius:9px;padding:10px;flex:1;color:#765365;font-weight:700}.tabs button.active{background:#9d285a;color:#fff}
+label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}input{width:100%;border:1px solid #e7d5df;border-radius:11px;padding:12px;font-size:15px;outline-color:#a33365;background:white} .primary{width:100%;border:0;border-radius:12px;background:#9d285a;color:white;font-weight:750;font-size:15px;padding:13px;margin-top:17px}.or{display:flex;align-items:center;gap:10px;color:#a28d99;font-size:12px;margin:17px 0}.or:before,.or:after{content:"";height:1px;background:#eee0e7;flex:1}.google{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;border:1px solid #e5dbe1;border-radius:12px;background:white;padding:11px;font-size:14px;font-weight:650;color:#3d3037}.g{font-weight:900;font-size:20px;background:conic-gradient(from -45deg,#4285f4 0 25%,#34a853 25% 50%,#fbbc05 50% 75%,#ea4335 75%);color:transparent;background-clip:text}.hint{font-size:11px;line-height:1.5;color:#947f8b;text-align:center;margin:14px 0 0}.hidden{display:none}.foot{font-size:11px;color:#aa97a1;text-align:center;margin-top:18px}
+</style>
+</head>
+<body><main class="card">
+<div class="brand"><div class="logo">চ</div><h1>Churi Ghor</h1><p>তোমার পছন্দের চুড়ি, তোমার স্টাইলে</p></div>
+<div class="tabs"><button id="loginTab" class="active" onclick="setMode('login')">Sign In</button><button id="signupTab" onclick="setMode('signup')">Sign Up</button></div>
+<form id="authForm">
+<div id="signupFields" class="hidden">
+<label for="name">নাম</label><input id="name" autocomplete="name" placeholder="তোমার পুরো নাম">
+<label for="phone">ফোন নম্বর</label><input id="phone" type="tel" autocomplete="tel" placeholder="01XXXXXXXXX">
+</div>
+<label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="পাসওয়ার্ড" required minlength="8">
+<div id="repeatField" class="hidden"><label for="repeat">পাসওয়ার্ড আবার দাও</label><input id="repeat" type="password" autocomplete="new-password" placeholder="পাসওয়ার্ড আবার লিখো" minlength="8"></div>
+<button class="primary" type="submit" id="submitBtn">Sign In</button>
+</form>
+<div class="or">অথবা</div>
+<button class="google" type="button" onclick="googleInfo()"><span class="g">G</span> Continue with Google</button>
+<p class="hint">Google বাটনে চাপলে Google-এর নিরাপদ অ্যাকাউন্ট নির্বাচন/অনুমোদন প্রক্রিয়া যুক্ত করতে হবে। নতুন বা আগে থেকে থাকা Gmail—দুটিই ব্যবহার করা যাবে।</p>
+<div class="foot">© Churi Ghor</div>
+</main>
+<script>
+let mode='login';
+function setMode(next){mode=next;document.getElementById('loginTab').classList.toggle('active',mode==='login');document.getElementById('signupTab').classList.toggle('active',mode==='signup');document.getElementById('signupFields').classList.toggle('hidden',mode!=='signup');document.getElementById('repeatField').classList.toggle('hidden',mode!=='signup');document.getElementById('submitBtn').textContent=mode==='login'?'Sign In':'Create Account';document.getElementById('password').autocomplete=mode==='login'?'current-password':'new-password';document.getElementById('name').required=mode==='signup';document.getElementById('phone').required=mode==='signup';document.getElementById('repeat').required=mode==='signup'}
+document.getElementById('authForm').addEventListener('submit',e=>{e.preventDefault();if(mode==='signup'&&document.getElementById('password').value!==document.getElementById('repeat').value){alert('দুইটি পাসওয়ার্ড এক হতে হবে।');return}alert('এটি শুধু Login/Sign Up ডিজাইন ডেমো। বাস্তব অ্যাকাউন্ট চালু করতে নিরাপদ Authentication Backend যুক্ত করতে হবে।')});
+function googleInfo(){alert('Google Sign-In চালু করতে OAuth/Authentication Provider কনফিগার করতে হবে। এই ডেমোতে এখনো সংযুক্ত নয়।')}
+setMode('login');
+</script></body></html>
