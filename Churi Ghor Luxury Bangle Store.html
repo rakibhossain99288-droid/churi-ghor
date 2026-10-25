@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churi Ghor | চুড়ি ঘর - Premium Bangle Boutique</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fbf8ed',
+                            100: '#f6eed2',
+                            200: '#edd9a3',
+                            300: '#e2be6d',
+                            400: '#d7a23f',
+                            500: '#ca8a22',
+                            600: '#ab6c19',
+                            700: '#894f18',
+                            800: '#71401a',
+                            900: '#60361a'
+                        },
+                        emerald: {
+                            800: '#064e3b',
+                            900: '#022c22'
+                        },
+                        maroon: {
+                            800: '#800000',
+                            900: '#4a0000'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        bangla: ['Hind Siliguri', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Hind Siliguri', sans-serif;
+            background-color: #0d1a15;
+            color: #f6eed2;
+        }
+        .luxury-card {
+            background: linear-gradient(145deg, rgba(16, 37, 30, 0.9), rgba(6, 22, 17, 0.95));
+            border: 1px solid rgba(215, 162, 63, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .luxury-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(215, 162, 63, 0.7);
+            box-shadow: 0 12px 25px -5px rgba(215, 162, 63, 0.2);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #edd9a3 0%, #d7a23f 50%, #edd9a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #d7a23f 0%, #ca8a22 100%);
+            color: #061611;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .gold-btn:hover {
+            background: linear-gradient(135deg, #edd9a3 0%, #d7a23f 100%);
+            box-shadow: 0 4px 15px rgba(215, 162, 63, 0.4);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #061611;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d7a23f;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col custom-scrollbar">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-gold-700 via-gold-500 to-gold-700 text-black font-semibold text-xs md:text-sm py-2 px-4 text-center tracking-wide shadow-md">
+        <span>সারাদেশে ক্যাশ অন ডেলিভারি | ১০০০+ টাকার অর্ডারে ফ্রি ডেলিভারি | হটলাইন: 01700-000000</span>
+    </div>
+
+    <!-- TEMPLATE SWITCHER HEADER BAR -->
+    <div class="bg-black/80 border-b border-gold-500/30 px-4 py-2 flex flex-wrap items-center justify-between gap-2 text-xs">
+        <div class="flex items-center space-x-2 text-gold-300">
+            <i class="fa-solid fa-layer-group"></i>
+            <span class="font-bold uppercase tracking-wider">Churi Ghor Designs & Layouts:</span>
+        </div>
+        <div class="flex flex-wrap gap-1 md:gap-2">
+            <button onclick="switchTemplate('index.html')" class="px-3 py-1 rounded border border-gold-400 bg-gold-400 text-black font-bold">1. Royal Gold</button>
+            <button onclick="switchTemplate('index2.html')" class="px-3 py-1 rounded border border-gold-500/30 hover:border-gold-400 text-gold-200">2. Pastel Minimal</button>
+            <button onclick="switchTemplate('index3.html')" class="px-3 py-1 rounded border border-gold-500/30 hover:border-gold-400 text-gold-200">3. Velvet Bridal</button>
+            <button onclick="switchTemplate('index4.html')" class="px-3 py-1 rounded border border-gold-500/30 hover:border-gold-400 text-gold-200">4. Dynamic Gallery</button>
+            <button onclick="switchTemplate('index5.html')" class="px-3 py-1 rounded border border-gold-500/30 hover:border-gold-400 text-gold-200">5. Single Page App</button>
+        </div>
+    </div>
+
+    <!-- MAIN HEADER -->
+    <header class="sticky top-0 z-40 bg-emerald-950/90 backdrop-blur-md border-b border-gold-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-12 h-12 rounded-full border-2 border-gold-400 flex items-center justify-center bg-emerald-900/50 shadow-inner group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-circle-notch text-gold-400 text-2xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-serif font-bold gold-gradient-text tracking-wide">চুড়ি ঘর</h1>
+                    <p class="text-[10px] tracking-widest text-gold-300 uppercase -mt-1 font-sans">Churi Ghor Boutique</p>
+                </div>
+            </a>
+
+            <!-- Search Bar Desktop -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-8 relative">
+                <input type="text" id="searchInput" oninput="filterProducts()" placeholder="চুড়ি খুঁজুন (যেমন: রেশমি, বাইডাল, কাঁচ)..." class="w-full bg-emerald-900/40 border border-gold-500/40 rounded-full py-2 pl-4 pr-10 text-sm text-gold-100 placeholder-gold-300/50 focus:outline-none focus:border-gold-400 transition">
+                <i class="fa-solid fa-magnifying-glass absolute right-3 text-gold-400"></i>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4 md:space-x-6">
+                <!-- Wishlist Badge -->
+                <button onclick="openWishlistModal()" class="relative p-2 text-gold-300 hover:text-gold-100 transition">
+                    <i class="fa-regular fa-heart text-2xl"></i>
+                    <span id="wishlistCount" class="absolute -top-1 -right-1 bg-red-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-emerald-950">0</span>
+                </button>
+
+                <!-- Cart Badge -->
+                <button onclick="openCartModal()" class="relative p-2 text-gold-300 hover:text-gold-100 transition">
+                    <i class="fa-solid fa-bag-shopping text-2xl"></i>
+                    <span id="cartCount" class="absolute -top-1 -right-1 bg-gold-400 text-black text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border border-emerald-950">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Search Bar -->
+        <div class="md:hidden px-4 pb-3">
+            <div class="relative">
+                <input type="text" id="searchInputMobile" oninput="syncMobileSearch()" placeholder="চুড়ি খুঁজুন..." class="w-full bg-emerald-900/40 border border-gold-500/40 rounded-full py-2 pl-4 pr-10 text-sm text-gold-100 placeholder-gold-300/50 focus:outline-none focus:border-gold-400">
+                <i class="fa-solid fa-magnifying-glass absolute right-3 top-2.5 text-gold-400"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO BANNER SECTION -->
+    <section class="relative min-h-[420px] md:min-h-[500px] flex items-center justify-center bg-gradient-to-r from-emerald-950 via-emerald-900 to-black overflow-hidden border-b border-gold-500/20">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#d7a23f_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="relative max-w-5xl mx-auto px-4 text-center z-10 py-12">
+            <span class="inline-block px-4 py-1 rounded-full border border-gold-400/50 bg-gold-500/10 text-gold-300 text-xs md:text-sm font-medium tracking-widest uppercase mb-4">ঐতিহ্য ও আধুনিকতার মেলবন্ধন</span>
+            <h2 class="text-3xl md:text-6xl font-serif font-bold text-white mb-4 leading-tight">
+                অভিজাত রাজকীয় চুড়ির <br><span class="gold-gradient-text">অনন্য কালেকশন</span>
+            </h2>
+            <p class="text-gold-100/80 text-sm md:text-lg max-w-2xl mx-auto mb-8 font-light">
+                দেশীয় রেশমি, সোনার প্রলেপ, রাজকীয় ব্রাইডাল সেট ও কাঁচের চুড়ির সেরা রাজকীয় সম্ভার এখন হাতের মুঠোয়।
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#productsSection" class="gold-btn px-8 py-3 rounded-full text-sm md:text-base tracking-wider uppercase shadow-lg">কালেকশন দেখুন</a>
+                <button onclick="filterByCategory('Bridal')" class="px-8 py-3 rounded-full border border-gold-400 text-gold-300 hover:bg-gold-500/10 text-sm md:text-base font-medium transition">ব্রাইডাল বিশেষ</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full" id="productsSection">
+
+        <!-- CATEGORY FILTERS -->
+        <div class="mb-10">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-serif font-semibold text-gold-200 flex items-center gap-2">
+                    <i class="fa-solid fa-gem text-gold-400 text-sm"></i>
+                    ক্যাটাগরি সমূহ
+                </h3>
+                <span id="productCount" class="text-xs text-gold-400/80">২২টি চুড়ি প্রদর্শিত হচ্ছে</span>
+            </div>
+            
+            <div class="flex items-center gap-2 overflow-x-auto pb-3 custom-scrollbar">
+                <button onclick="filterByCategory('All')" class="category-btn active border border-gold-400 bg-gold-400 text-black px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    সব কালেকশন
+                </button>
+                <button onclick="filterByCategory('Reshmi')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    রেশমি চুড়ি
+                </button>
+                <button onclick="filterByCategory('Gold')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    সোনার প্রলেপ
+                </button>
+                <button onclick="filterByCategory('Glass')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    কাঁচের চুড়ি
+                </button>
+                <button onclick="filterByCategory('Velvet')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    ভেলভেট চুড়ি
+                </button>
+                <button onclick="filterByCategory('Bridal')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    ব্রাইডাল সেট
+                </button>
+                <button onclick="filterByCategory('Metal')" class="category-btn border border-gold-500/30 hover:border-gold-400 text-gold-200 px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition">
+                    মেটাল ও রূপা
+                </button>
+            </div>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div id="productGrid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <!-- Dynamic JS Injected Cards -->
+        </div>
+
+        <!-- NO RESULTS PLACEHOLDER -->
+        <div id="noResults" class="hidden text-center py-16">
+            <i class="fa-solid fa-magnifying-glass text-4xl text-gold-500/40 mb-3"></i>
+            <p class="text-gold-200 text-lg">কোনো চুড়ি পাওয়া যায়নি!</p>
+            <p class="text-xs text-gold-400/60 mt-1">অন্য ক্যাটাগরি বা ফিল্টার ব্যবহার করে চেষ্টা করুন।</p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-black/90 border-t border-gold-500/30 text-gold-100/80 pt-12 pb-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            <div>
+                <h4 class="text-xl font-serif font-bold gold-gradient-text mb-3">চুড়ি ঘর</h4>
+                <p class="text-xs leading-relaxed text-gold-300/70 mb-4">
+                    বাংলাদেশের সর্ববৃহৎ এবং সর্বাধিক বিশ্বস্ত প্রিমিয়াম ট্র্যাডিশনাল এবং মডার্ন চুড়ির অনলাইন এক্সক্লুসিভ স্টোর।
+                </p>
+                <div class="flex space-x-3 text-gold-400">
+                    <a href="#" class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition"><i class="fa-brands fa-facebook-f text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition"><i class="fa-brands fa-instagram text-xs"></i></a>
+                    <a href="#" class="w-8 h-8 rounded-full border border-gold-500/40 flex items-center justify-center hover:bg-gold-400 hover:text-black transition"><i class="fa-brands fa-whatsapp text-xs"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h5 class="text-sm font-semibold text-gold-300 uppercase tracking-wider mb-3">দ্রুত লিঙ্ক</h5>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-gold-400 transition">হোমপেজ</a></li>
+                    <li><a href="#productsSection" class="hover:text-gold-400 transition">সব চুড়ি কালেকশন</a></li>
+                    <li><a href="#" onclick="filterByCategory('Bridal')" class="hover:text-gold-400 transition">ব্রাইডাল স্পেশাল</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition">অফার ও ডিসকাউন্ট</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-sm font-semibold text-gold-300 uppercase tracking-wider mb-3">গ্রাহক সেবা</h5>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#" class="hover:text-gold-400 transition">ডেলিভারি পলিসি</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition">রিটার্ন ও এক্সচেঞ্জ</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition">চুড়ির সাইজ গাইড</a></li>
+                    <li><a href="#" class="hover:text-gold-400 transition">প্রাইভেসি পলিসি</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-sm font-semibold text-gold-300 uppercase tracking-wider mb-3">যোগাযোগ</h5>
+                <p class="text-xs text-gold-300/70 mb-2"><i class="fa-solid fa-location-dot text-gold-400 mr-2"></i> ধানমন্ডি, ঢাকা, বাংলাদেশ</p>
+                <p class="text-xs text-gold-300/70 mb-2"><i class="fa-solid fa-phone text-gold-400 mr-2"></i> +880 1700-000000</p>
+                <p class="text-xs text-gold-300/70 mb-2"><i class="fa-solid fa-envelope text-gold-400 mr-2"></i> info@churighor.com</p>
+            </div>
+        </div>
+        <div class="border-t border-gold-500/20 max-w-7xl mx-auto px-4 pt-6 flex flex-col md:flex-row items-center justify-between text-xs text-gold-400/60">
+            <p>© ২০২৬ চুড়ি ঘর। সর্বস্বত্ব সংরক্ষিত।</p>
+            <p class="mt-2 md:mt-0">প্রিমিয়াম কোয়ালিটি | ১০০% আসল পণ্য</p>
+        </div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div id="cartModal" class="fixed inset-0 bg-black/80 z-50 hidden flex justify-end transition-opacity">
+        <div class="w-full max-w-md bg-emerald-950 border-l border-gold-500/40 h-full flex flex-col p-6 shadow-2xl relative">
+            <div class="flex items-center justify-between border-b border-gold-500/30 pb-4 mb-4">
+                <h3 class="text-lg font-serif font-bold text-gold-200 flex items-center gap-2">
+                    <i class="fa-solid fa-bag-shopping text-gold-400"></i> শপিং কার্ট
+                </h3>
+                <button onclick="closeCartModal()" class="text-gold-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="cartItemsContainer" class="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar">
+                <!-- Dynamic Items -->
+            </div>
+
+            <div class="border-t border-gold-500/30 pt-4 mt-4 space-y-3">
+                <div class="flex justify-between text-sm text-gold-200 font-semibold">
+                    <span>মোট টাকা:</span>
+                    <span id="cartTotalAmount">৳ 0</span>
+                </div>
+                <button onclick="proceedToCheckout()" class="w-full gold-btn py-3 rounded-xl font-bold text-center tracking-wider uppercase text-sm">
+                    অর্ডার সম্পন্ন করুন (WhatsApp)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WISHLIST MODAL -->
+    <div id="wishlistModal" class="fixed inset-0 bg-black/80 z-50 hidden flex justify-end">
+        <div class="w-full max-w-md bg-emerald-950 border-l border-gold-500/40 h-full flex flex-col p-6 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-gold-500/30 pb-4 mb-4">
+                <h3 class="text-lg font-serif font-bold text-gold-200 flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-red-500"></i> উইশলিস্ট
+                </h3>
+                <button onclick="closeWishlistModal()" class="text-gold-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div id="wishlistItemsContainer" class="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar">
+                <!-- Dynamic Items -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BUY NOW / ORDER MODAL -->
+    <div id="buyNowModal" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4">
+        <div class="w-full max-w-lg bg-emerald-950 border border-gold-500/50 rounded-2xl p-6 relative shadow-2xl">
+            <button onclick="closeBuyNowModal()" class="absolute top-4 right-4 text-gold-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            
+            <h3 class="text-xl font-serif font-bold gold-gradient-text mb-4 border-b border-gold-500/30 pb-2">
+                সরাসরি অর্ডার করুন
+            </h3>
+
+            <form id="orderForm" onsubmit="handleDirectOrder(event)" class="space-y-4 text-xs md:text-sm">
+                <div>
+                    <label class="block text-gold-300 mb-1 font-medium">আপনার নাম *</label>
+                    <input type="text" id="custName" required placeholder="সম্পূর্ণ নাম লিখুন" class="w-full bg-emerald-900/60 border border-gold-500/30 rounded-lg p-2.5 text-gold-100 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-gold-300 mb-1 font-medium">মোবাইল নম্বর *</label>
+                    <input type="tel" id="custPhone" required placeholder="০17XXXXXXXX" class="w-full bg-emerald-900/60 border border-gold-500/30 rounded-lg p-2.5 text-gold-100 focus:outline-none focus:border-gold-400">
+                </div>
+
+                <div>
+                    <label class="block text-gold-300 mb-1 font-medium">পূর্ণাঙ্গ ঠিকানা *</label>
+                    <textarea id="custAddress" required rows="2" placeholder="বাড়ি/রোড নম্বর, এলাকা, থানা, জেলা" class="w-full bg-emerald-900/60 border border-gold-500/30 rounded-lg p-2.5 text-gold-100 focus:outline-none focus:border-gold-400"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-gold-300 mb-1 font-medium">চুড়ির সাইজ</label>
+                    <select id="bangleSize" class="w-full bg-emerald-900/60 border border-gold-500/30 rounded-lg p-2.5 text-gold-100 focus:outline-none focus:border-gold-400">
+                        <option value="2.4">2.4 (ছোট)</option>
+                        <option value="2.6" selected>2.6 (মাঝারি - স্ট্যান্ডার্ড)</option>
+                        <option value="2.8">2.8 (বড়)</option>
+                        <option value="2.10">2.10 (বিশেষ বড়)</option>
+                    </select>
+                </div>
+
+                <div id="modalProductSummary" class="bg-emerald-900/40 p-3 rounded-lg border border-gold-500/20 text-xs text-gold-200">
+                    <!-- Dynamic Summary -->
+                </div>
+
+                <button type="submit" class="w-full gold-btn py-3 rounded-xl font-bold flex items-center justify-center gap-2 text-base">
+                    <i class="fa-brands fa-whatsapp text-lg"></i> হোয়াটসঅ্যাপে কনফার্ম করুন
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 22 PREMIUM BANGLE PRODUCTS DATA
+        const products = [
+            { id: 1, name: 'রেশমি সুতার লাল-সবুজ কাঁচ চুড়ি সেট', category: 'Reshmi', price: 450, oldPrice: 600, image: 'https://images.unsplash.com/photo-1611591475194-43b9e4a36239?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 2, name: '২৪ ক্যারেট গোল্ড প্লেটেড রয়েল কঙ্কন', category: 'Gold', price: 1850, oldPrice: 2200, image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 3, name: 'ঐতিহ্যবাহী জয়পুরী কাঁচের মিণাকারি চুড়ি', category: 'Glass', price: 650, oldPrice: 850, image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 4, name: 'রয়েল ব্রাইডাল প্রিমিয়াম দুলাহান সেট', category: 'Bridal', price: 3450, oldPrice: 4200, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 5, name: 'মেরুন ভেলভেট স্টোন ওয়ার্ক কঙ্কন', category: 'Velvet', price: 890, oldPrice: 1100, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 6, name: 'অ্যান্টিক মেটাল বালা কাট ওয়ার্ক', category: 'Metal', price: 720, oldPrice: 950, image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 7, name: 'বহুরঙা সিল্ক রেশমি সুতার গ্লাস চুড়ি', category: 'Reshmi', price: 520, oldPrice: 700, image: 'https://images.unsplash.com/photo-1611591475194-43b9e4a36239?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 8, name: 'সোনার প্রলেপযুক্ত ময়ূর ডিজাইন চূড়', category: 'Gold', price: 2100, oldPrice: 2600, image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 9, name: 'ফিরোজা ব্লু ক্রিস্টাল কাঁচের চুড়ি', category: 'Glass', price: 580, oldPrice: 750, image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 10, name: 'রয়েল গ্রিন ভেলভেট জড়োয়ার সেট', category: 'Velvet', price: 950, oldPrice: 1250, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 11, name: 'রাজস্থানী গালা ব্রাইডাল চুরা সেট', category: 'Bridal', price: 2950, oldPrice: 3500, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 12, name: 'অক্সিডাইজড সিলভার ট্র্যাডিশনাল চুড়ি', category: 'Metal', price: 680, oldPrice: 890, image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 13, name: 'হলুদ সন্ধ্যার স্পেশাল রেশমি ডালি', category: 'Reshmi', price: 480, oldPrice: 650, image: 'https://images.unsplash.com/photo-1611591475194-43b9e4a36239?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 14, name: 'হ্যান্ডক্রাফটেড মেটালিক গোল্ড প্লেটেড বালা', category: 'Gold', price: 1650, oldPrice: 2000, image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 15, name: 'রানি গোলাপী ম্যাট কাঁচ চুড়ি সেট', category: 'Glass', price: 420, oldPrice: 550, image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 16, name: 'ব্ল্যাক রয়েল ভেলভেট পার্টি চুড়ি', category: 'Velvet', price: 820, oldPrice: 1050, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 17, name: 'কুন্দন স্টোন ব্রাইডাল মাস্টাফানি সেট', category: 'Bridal', price: 4200, oldPrice: 5000, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 18, name: 'আফগানি জার্মান সিলভার হেভি কঙ্কন', category: 'Metal', price: 1150, oldPrice: 1450, image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 19, name: 'বাসন্তী সিল্ক থ্রেড পার্ল চুড়ি', category: 'Reshmi', price: 590, oldPrice: 780, image: 'https://images.unsplash.com/photo-1611591475194-43b9e4a36239?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 20, name: '১৮ কে লাইটওয়েট স্মুথ গোল্ড চেইন চুড়ি', category: 'Gold', price: 1490, oldPrice: 1800, image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80', isNew: false },
+            { id: 21, name: 'পার্পল ভেলভেট ডায়মন্ড কাট চুড়ি', category: 'Velvet', price: 880, oldPrice: 1150, image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80', isNew: true },
+            { id: 22, name: 'গোল্ডেন পোলকি স্টোন ব্রাইডাল চুড়ি', category: 'Bridal', price: 3800, oldPrice: 4500, image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80', isNew: false }
+        ];
+
+        // STATE MANAGEMENT
+        let cart = [];
+        let wishlist = [];
+        let activeCategory = 'All';
+        let directCheckoutItem = null;
+
+        // INITIALIZE APP
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts(products);
+            updateCartBadge();
+            updateWishlistBadge();
+        });
+
+        // RENDER PRODUCT CARDS
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            const noResults = document.getElementById('noResults');
+            const countLabel = document.getElementById('productCount');
+
+            countLabel.textContent = `${items.length}টি চুড়ি প্রদর্শিত হচ্ছে`;
+
+            if (items.length === 0) {
+                grid.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+
+            noResults.classList.add('hidden');
+            grid.innerHTML = items.map(p => {
+                const isWishlisted = wishlist.includes(p.id);
+                return `
+                <div class="luxury-card rounded-xl overflow-hidden flex flex-col justify-between group">
+                    <div class="relative overflow-hidden aspect-square">
+                        <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500">
+                        ${p.isNew ? `<span class="absolute top-2 left-2 bg-gold-500 text-black text-[10px] font-bold px-2 py-0.5 rounded shadow">নতুন</span>` : ''}
+                        
+                        <button onclick="toggleWishlist(${p.id})" class="absolute top-2 right-2 w-8 h-8 rounded-full bg-black/60 border border-gold-500/30 text-gold-300 flex items-center justify-center hover:bg-gold-500 hover:text-black transition">
+                            <i class="${isWishlisted ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
+                        </button>
+                    </div>
+
+                    <div class="p-3 md:p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] text-gold-400/80 uppercase font-semibold tracking-wider">${getCategoryName(p.category)}</span>
+                            <h4 class="text-xs md:text-sm font-semibold text-gold-100 line-clamp-2 mt-1 mb-2">${p.name}</h4>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline space-x-2 mb-3">
+                                <span class="text-sm md:text-base font-bold gold-gradient-text">৳ ${p.price}</span>
+                                <span class="text-[11px] text-gold-300/40 line-through">৳ ${p.oldPrice}</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-2">
+                                <button onclick="addToCart(${p.id})" class="w-full border border-gold-400/60 hover:bg-gold-500/20 text-gold-200 text-xs py-2 rounded-lg font-medium transition flex items-center justify-center gap-1">
+                                    <i class="fa-solid fa-cart-plus text-[10px]"></i> কার্ট
+                                </button>
+                                <button onclick="openBuyNowModal(${p.id})" class="w-full gold-btn text-xs py-2 rounded-lg font-semibold transition">
+                                    অর্ডার
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        // CATEGORY TRANSLATION
+        function getCategoryName(cat) {
+            const map = {
+                Reshmi: 'রেশমি চুড়ি',
+                Gold: 'সোনার প্রলেপ',
+                Glass: 'কাঁচের চুড়ি',
+                Velvet: 'ভেলভেট চুড়ি',
+                Bridal: 'ব্রাইডাল সেট',
+                Metal: 'মেটাল ও রূপা'
+            };
+            return map[cat] || cat;
+        }
+
+        // FILTER BY CATEGORY
+        function filterByCategory(cat) {
+            activeCategory = cat;
+            
+            // Update Active Button Style
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('bg-gold-400', 'text-black');
+                btn.classList.add('text-gold-200');
+            });
+            event?.currentTarget?.classList?.add('bg-gold-400', 'text-black');
+
+            filterProducts();
+        }
+
+        // FILTER LOGIC (SEARCH + CATEGORY)
+        function filterProducts() {
+            const searchVal = document.getElementById('searchInput').value.trim().toLowerCase();
+            
+            const filtered = products.filter(p => {
+                const matchesCat = activeCategory === 'All' || p.category === activeCategory;
+                const matchesSearch = p.name.toLowerCase().includes(searchVal) || getCategoryName(p.category).toLowerCase().includes(searchVal);
+                return matchesCat && matchesSearch;
+            });
+
+            renderProducts(filtered);
+        }
+
+        function syncMobileSearch() {
+            const mobileVal = document.getElementById('searchInputMobile').value;
+            document.getElementById('searchInput').value = mobileVal;
+            filterProducts();
+        }
+
+        // CART SYSTEM
+        function addToCart(productId) {
+            const existing = cart.find(item => item.id === productId);
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                const product = products.find(p => p.id === productId);
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartBadge();
+            renderCartItems();
+            showToast('চুড়ি কার্টে যোগ করা হয়েছে!');
+        }
+
+        function updateCartBadge() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').textContent = totalQty;
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            const totalEl = document.getElementById('cartTotalAmount');
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gold-300/50">
+                        <i class="fa-solid fa-bag-shopping text-3xl mb-2"></i>
+                        <p class="text-xs">আপনার কার্ট খালি রয়েছে</p>
+                    </div>
+                `;
+                totalEl.textContent = '৳ 0';
+                return;
+            }
+
+            let total = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.qty;
+                total += itemTotal;
+                return `
+                <div class="flex items-center space-x-3 bg-emerald-900/40 p-2.5 rounded-lg border border-gold-500/20">
+                    <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded object-cover">
+                    <div class="flex-1">
+                        <h5 class="text-xs font-medium text-gold-100 line-clamp-1">${item.name}</h5>
+                        <p class="text-xs gold-gradient-text font-bold">৳ ${item.price}</p>
+                        <div class="flex items-center space-x-2 mt-1">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 rounded border border-gold-500/40 text-gold-300 text-xs flex items-center justify-center">-</button>
+                            <span class="text-xs font-semibold text-gold-200">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 rounded border border-gold-500/40 text-gold-300 text-xs flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-300 text-xs p-1">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                `;
+            }).join('');
+
+            totalEl.textContent = `৳ ${total}`;
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== id);
+                }
+            }
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function removeFromCart(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        function openCartModal() {
+            renderCartItems();
+            document.getElementById('cartModal').classList.remove('hidden');
+        }
+
+        function closeCartModal() {
+            document.getElementById('cartModal').classList.add('hidden');
+        }
+
+        // WISHLIST SYSTEM
+        function toggleWishlist(id) {
+            if (wishlist.includes(id)) {
+                wishlist = wishlist.filter(item => item !== id);
+                showToast('উইশলিস্ট থেকে সরানো হয়েছে');
+            } else {
+                wishlist.push(id);
+                showToast('উইশলিস্টে যোগ করা হয়েছে!');
+            }
+            updateWishlistBadge();
+            renderProducts(products.filter(p => activeCategory === 'All' || p.category === activeCategory));
+        }
+
+        function updateWishlistBadge() {
+            document.getElementById('wishlistCount').textContent = wishlist.length;
+        }
+
+        function openWishlistModal() {
+            const container = document.getElementById('wishlistItemsContainer');
+            if (wishlist.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 text-gold-300/50">
+                        <i class="fa-solid fa-heart text-3xl mb-2"></i>
+                        <p class="text-xs">উইশলিস্টে কোনো চুড়ি নেই</p>
+                    </div>
+                `;
+            } else {
+                const favProducts = products.filter(p => wishlist.includes(p.id));
+                container.innerHTML = favProducts.map(item => `
+                    <div class="flex items-center space-x-3 bg-emerald-900/40 p-2.5 rounded-lg border border-gold-500/20">
+                        <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded object-cover">
+                        <div class="flex-1">
+                            <h5 class="text-xs font-medium text-gold-100 line-clamp-1">${item.name}</h5>
+                            <p class="text-xs gold-gradient-text font-bold">৳ ${item.price}</p>
+                        </div>
+                        <button onclick="addToCart(${item.id}); toggleWishlist(${item.id})" class="gold-btn text-[10px] px-2.5 py-1 rounded font-semibold">
+                            কার্টে নিন
+                        </button>
+                    </div>
+                `).join('');
+            }
+            document.getElementById('wishlistModal').classList.remove('hidden');
+        }
+
+        function closeWishlistModal() {
+            document.getElementById('wishlistModal').classList.add('hidden');
+        }
+
+        // DIRECT BUY NOW & WHATSAPP INTEGRATION
+        function openBuyNowModal(productId = null) {
+            if (productId) {
+                directCheckoutItem = products.find(p => p.id === productId);
+            } else {
+                directCheckoutItem = null; // Whole cart
+            }
+
+            const summaryEl = document.getElementById('modalProductSummary');
+            if (directCheckoutItem) {
+                summaryEl.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-gold-200">${directCheckoutItem.name}</span>
+                        <span class="font-bold gold-gradient-text">৳ ${directCheckoutItem.price}</span>
+                    </div>
+                `;
+            } else if (cart.length > 0) {
+                const total = cart.reduce((sum, i) => sum + (i.price * i.qty), 0);
+                summaryEl.innerHTML = `
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-gold-200">কার্টের মোট চুড়ি: ${cart.reduce((s, i) => s + i.qty, 0)}টি</span>
+                        <span class="font-bold gold-gradient-text">মোট: ৳ ${total}</span>
+                    </div>
+                `;
+            } else {
+                alert('কার্ট খালি রয়েছে!');
+                return;
+            }
+
+            closeCartModal();
+            document.getElementById('buyNowModal').classList.remove('hidden');
+        }
+
+        function closeBuyNowModal() {
+            document.getElementById('buyNowModal').classList.add('hidden');
+        }
+
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert('আপনার কার্ট খালি!');
+                return;
+            }
+            openBuyNowModal(null);
+        }
+
+        function handleDirectOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+            const size = document.getElementById('bangleSize').value;
+
+            let orderText = `*নতুন অর্ডার - চুড়ি ঘর (Churi Ghor)*\n\n`;
+            orderText += `*গ্রাহকের নাম:* ${name}\n`;
+            orderText += `*মোবাইল:* ${phone}\n`;
+            orderText += `*ঠিকানা:* ${address}\n`;
+            orderText += `*চুড়ির সাইজ:* ${size}\n\n`;
+            orderText += `*অর্ডার বিবরণ:*\n`;
+
+            let totalPrice = 0;
+            if (directCheckoutItem) {
+                orderText += `- ${directCheckoutItem.name} (১ টি) = ৳${directCheckoutItem.price}\n`;
+                totalPrice = directCheckoutItem.price;
+            } else {
+                cart.forEach(item => {
+                    const lineTotal = item.price * item.qty;
+                    totalPrice += lineTotal;
+                    orderText += `- ${item.name} (${item.qty} টি) = ৳${lineTotal}\n`;
+                });
+            }
+
+            orderText += `\n*সর্বমোট মূল্য:* ৳${totalPrice}`;
+
+            const encodedMsg = encodeURIComponent(orderText);
+            const whatsappUrl = `https://wa.me/8801700000000?text=${encodedMsg}`;
+            
+            window.open(whatsappUrl, '_blank');
+            closeBuyNowModal();
+        }
+
+        // TOAST NOTIFICATION
+        function showToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = 'fixed bottom-5 right-5 bg-gold-400 text-black text-xs font-bold px-4 py-2.5 rounded-lg shadow-xl z-50 transition-all transform translate-y-0';
+            toast.textContent = msg;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
+        }
+
+        // TEMPLATE SWITCHER DISPATCHER
+        function switchTemplate(filename) {
+            window.location.href = filename;
+        }
+    </script>
+</body>
+</html>
